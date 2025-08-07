@@ -1,18 +1,34 @@
 [project]
 name = "gestion-projet-backend"
 version = "0.1.0"
-description = ""
+description = "Projet Django moderne"
 authors = [
-    {name = "Your Name",email = "you@example.com"}
+    {name = "Dhalil Kamdem",email = "you@example.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "django (>=5.2.5,<6.0.0)"
 ]
 
 [tool.poetry]
 packages = [{include = "gestion_projet_backend", from = "src"}]
 
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.12.7"
+black = "^25.1.0"
+bandit = "^1.8.6"
+pre-commit = "^4.2.0"
+
+[tool.black]
+line-length = 91
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 91
+select = ["E", "F", "I", "B", "S"]
+fixable = ["E", "F", "I"]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
